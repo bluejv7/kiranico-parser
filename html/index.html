@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
+    <meta name="csrf-token" content="7V8UoRTjmIs7RQQppZ1KQBfalPpZdXshAUjtN9o0">
+    <title>MHGU - Kiranico - Monster Hunter Generations Ultimate Database</title><meta name="keywords" content="mhgu, kiranico, wiki, guide, database, walkthrough, nintendo switch, Monster Hunter Generations Ultimate Database, Item List, Armor List, Weapon List, Quest List, Skill List, Hunter Arts"><meta name="twitter:site" content="@kiranico_en" />
+    <link rel="stylesheet" href="/css/app.7f9a37b49de95fe43cb7.css">
+    <script>
+        window.Laravel = {"csrfToken":"7V8UoRTjmIs7RQQppZ1KQBfalPpZdXshAUjtN9o0"};
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49349327-1', 'auto');
+    ga('send', 'pageview');
+
+</script>    <script type="text/javascript">
+    window['nitroAds'] = window['nitroAds'] || { createAd: function () { window.nitroAds.queue.push(["createAd", arguments]) }, queue: [] };
+</script>
+<script async src="https://s.nitropay.com/ads-318.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    window['nitroAds'].createAd('mhgu.mobile-anchor-bottom', {
+        "refreshLimit": 10,
+        "refreshTime": 60,
+        "format": "anchor",
+        "anchor": "bottom",
+        "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+    });
+</script>
+<div id="app">
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input placeholder="Search MHGU" autocomplete="off" spellcheck="false"
+                       class="form-control form-control-lg mr-2" id="searchModalInput" v-model="query"
+                       @input="update">
+                <button type="button" class="close pt-1" data-dismiss="modal" aria-label="Close">
+                    <span data-icon="ei-close"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                                <div>
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="monsters_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Monster
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path" v-text="result.strings.en.name"></a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="items_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="3"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Item
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.name"></div>
+                        <small class="text-muted" v-text="result.strings.en.description"></small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="quests_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Quest
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.title"></div>
+                        <small class="text-muted" v-text="[result.strings.en.main, result.strings.en.sub, result.strings.en.monsters].join('・')"></small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="weapons_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Weapon
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="[result.strings.en.name, result.strings.en.max_name, result.strings.en.limit_name].join('・')"></div>
+                        <small class="text-muted">
+                            
+                            Rare <span v-text="result.rare"></span>・<span
+                                    v-text="result.strings.en.description"></span>
+                        </small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="armors_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Armor
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div>
+                            <span v-for="(armor, index) in result.strings.en">
+                                <span v-text="armor.name"></span>
+                                <span v-if="index < result.strings.en.length - 1">・ </span>
+                            </span>
+                        </div>
+                        <small class="text-muted">
+                            Rare <span v-text="result.rare"></span>
+                            <span v-if="result.blade_wearable">・Blademaster</span>
+                            <span v-if="result.gunner_wearable">・Gunner</span>
+                            <span v-if="result.male_wearable">・Male</span>
+                            <span v-if="result.female_wearable">・Female</span>
+                        </small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="locations_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="1"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Map
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path" v-text="result.strings.en.name"></a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="skilltypes_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Skill
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.name"></div>
+                        <small class="text-muted">
+                            <div>
+                            <span v-for="(skill, index) in result.strings.en.skills">
+                                <span v-text="skill.name"></span>
+                                <span v-if="index < result.strings.en.skills.length - 1">・ </span>
+                            </span>
+                            </div>
+                            <div v-text="result.strings.en.description"></div>
+                        </small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="hunterarts_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="2"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Hunter Arts
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.name"></div>
+                        <small class="text-muted" v-text="result.strings.en.description"></small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="otarmors_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="1"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Palico Weapon
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.name"></div>
+                        <small class="text-muted" v-text="result.strings.en.description"></small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+
+                    <ais-index
+        app-id="KMN4EURUHU"
+        api-key="c350b8a2fff77b0418b095441c991855"
+        index-name="otweapons_index"
+        :query="query"
+        :auto-search="false"
+>
+    <ais-results
+            inline-template
+            :results-per-page="1"
+    >
+        <table class="table table-sm table-bordered table-hover mb-0" v-if="results.length">
+            <thead class="thead-default">
+            <tr>
+                <th colspan="2" class="pl-2 align-middle">
+                    Palico Armor
+                    <ais-pagination
+                            :padding="0"
+                            :class-names="{
+                            'ais-pagination': 'pagination pagination-sm float-right mb-0',
+                            'ais-pagination__item': 'page-item',
+                            'ais-pagination__item--active': 'active d-none',
+                            'ais-pagination__item--disabled': 'disabled',
+                            'ais-pagination__link': 'page-link',
+                            'ais-pagination__item--first': 'd-none',
+                            'ais-pagination__item--last': 'd-none',
+                            }"
+                    >
+                        <span slot="previous">&larr;</span>
+                        <span slot="next">&rarr;</span>
+                    </ais-pagination>
+                </th>
+            </tr>
+            </thead>
+            <tr class="hidden-sm-down">
+                <td :rowspan="results.length + 1" class="w-25 font-weight-bold"></td>
+            </tr>
+            <tr v-for="result in results" :key="result.objectID">
+                <td>
+                    <a class="d-block" :href="result.path">
+                        <div v-text="result.strings.en.name"></div>
+                        <small class="text-muted" v-text="result.strings.en.description"></small>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </ais-results>
+</ais-index>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <ais-powered-by class="float-right"></ais-powered-by>
+            </div>
+        </div>
+    </div>
+</div>
+    <nav class="navbar navbar-toggleable navbar-light bg-faded">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            Kiranico | MHGU&nbsp;&nbsp;
+        </a>
+        <div class="mr-auto">
+            <button type="button" class="btn btn-secondary text-left hidden-md-down" data-toggle="modal"
+                    data-target="#searchModal" style="width: 420px">
+                Search Monster Hunter Generations Ultimate
+            </button>
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="localeSelection" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    English
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="localeSelection">
+                                                                                                                    <a
+                                class="dropdown-item"
+                                href="https://mhgu.kiranico.com/fr"
+                                rel="alternate" hreflang="fr">
+                                Français
+                            </a>
+                                                                                                <a
+                                class="dropdown-item"
+                                href="https://mhgu.kiranico.com/de"
+                                rel="alternate" hreflang="de">
+                                Deutsch
+                            </a>
+                                                                                                <a
+                                class="dropdown-item"
+                                href="https://mhgu.kiranico.com/it"
+                                rel="alternate" hreflang="it">
+                                Italiano
+                            </a>
+                                                                                                <a
+                                class="dropdown-item"
+                                href="https://mhgu.kiranico.com/es"
+                                rel="alternate" hreflang="es">
+                                Español
+                            </a>
+                                            
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="container">
+        <br class="hidden-sm-down">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="hidden-md-down">
+                    <ul class="nav flex-column">
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link flex-grow-1" href="https://mhgu.kiranico.com/quest">Quest List</a>
+
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/monster">Monster List</a>
+            
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/item">Item List</a>
+
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Weapon List</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/greatsword">Great Sword</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/longsword">Long Sword</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/sword">Sword &amp; Shield</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/dualblades">Dual Blades</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/hammer">Hammer</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/huntinghorn">Hunting Horn</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/lance">Lance</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/gunlance">Gunlance</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/switchaxe">Switch Axe</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/chargeblade">Charge Blade</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/insectglaive">Insect Glaive</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/lightbowgun">Light Bowgun</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/heavybowgun">Heavy Bowgun</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/bow">Bow</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/armor">Armor List</a>
+
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/decorations">Decorations</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/skill">Skill List</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/hunterarts">Hunter Arts</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Map List</a>
+        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/759e5">J. Frontier </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/854d5">V. Hills </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/a5375">A. Ridge </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/75065">M. Peaks </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/e58e5">Dunes</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/d5d85">D. Island</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/757b5">Marshlands</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/e5b45">Volcano</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/65a35">Arena</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/56485">V. Slayground</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5edd5">A. Steppe</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/596e5">V. Hollow</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/540d5">Primal Forest</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/53675">F. Seaway</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/50b65">F. Slayground</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/58de5">Sanctuary</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5d385">Forlorn Arena</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/57db5">S. Pinnacle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5b945">Ingle Isle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5a035">Polar Field</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/56a85">Wyvern&#039;s End</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5ebd5">Desert</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/59ee5">Jungle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/548d5">Ruined Pinnacle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/53375">Castle Schrade</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/50765">Fortress</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/586e5">Forlorn Citadel</a>
+                    </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/charms">Charm Skill Tables</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/combine">Combo List</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Palico</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-weapon">Palico Weapon</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-armor">Palico Armor</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-skill">Palico Skill</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-support">Palico Support</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Canteen</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/food-skills">Food Skills</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/meals">Meal List</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/hunter-hire">Hunters for Hire</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/veggie">Veggie Elder</a>
+    </li>
+</ul>
+                </div>
+                <div class="hidden-lg-up">
+                    <form class="d-flex align-items-center mb-0">
+                        <button type="button" class="btn btn-secondary text-left mr-auto w-100" data-toggle="modal" data-target="#searchModal">
+                            Search MHXX
+                        </button>
+                        <button class="btn btn-link mt-2" type="button" data-toggle="collapse"
+                                data-target="#mobileSidenavCollapse"
+                                aria-expanded="false" aria-controls="mobileSidenavCollapse">
+                            <span data-icon="ei-navicon"></span>
+                        </button>
+                    </form>
+                    <div class="collapse" id="mobileSidenavCollapse">
+                        <br>
+                        <ul class="nav flex-column">
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link flex-grow-1" href="https://mhgu.kiranico.com/quest">Quest List</a>
+
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/monster">Monster List</a>
+            
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/item">Item List</a>
+
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Weapon List</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/greatsword">Great Sword</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/longsword">Long Sword</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/sword">Sword &amp; Shield</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/dualblades">Dual Blades</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/hammer">Hammer</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/huntinghorn">Hunting Horn</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/lance">Lance</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/gunlance">Gunlance</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/switchaxe">Switch Axe</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/chargeblade">Charge Blade</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/insectglaive">Insect Glaive</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/lightbowgun">Light Bowgun</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/heavybowgun">Heavy Bowgun</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/bow">Bow</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="d-flex justify-content-between">
+            <a class="nav-link" href="https://mhgu.kiranico.com/armor">Armor List</a>
+
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/decorations">Decorations</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/skill">Skill List</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/hunterarts">Hunter Arts</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Map List</a>
+        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/759e5">J. Frontier </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/854d5">V. Hills </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/a5375">A. Ridge </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/75065">M. Peaks </a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/e58e5">Dunes</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/d5d85">D. Island</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/757b5">Marshlands</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/e5b45">Volcano</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/65a35">Arena</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/56485">V. Slayground</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5edd5">A. Steppe</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/596e5">V. Hollow</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/540d5">Primal Forest</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/53675">F. Seaway</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/50b65">F. Slayground</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/58de5">Sanctuary</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5d385">Forlorn Arena</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/57db5">S. Pinnacle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5b945">Ingle Isle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5a035">Polar Field</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/56a85">Wyvern&#039;s End</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/5ebd5">Desert</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/59ee5">Jungle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/548d5">Ruined Pinnacle</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/53375">Castle Schrade</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/50765">Fortress</a>
+                            <a class="dropdown-item" href="https://mhgu.kiranico.com/map/586e5">Forlorn Citadel</a>
+                    </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/charms">Charm Skill Tables</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/combine">Combo List</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Palico</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-weapon">Palico Weapon</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-armor">Palico Armor</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-skill">Palico Skill</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/prowler-support">Palico Support</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true"
+           aria-expanded="false">Canteen</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/food-skills">Food Skills</a>
+            <a class="dropdown-item" href="https://mhgu.kiranico.com/meals">Meal List</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/hunter-hire">Hunters for Hire</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://mhgu.kiranico.com/veggie">Veggie Elder</a>
+    </li>
+</ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-10 px-0">
+                                <div id="mhgu.content-top-header" class="mb-4"></div>
+
+<script type="text/javascript">
+    window['nitroAds'].createAd('mhgu.content-top-header', {
+        "refreshLimit": 10,
+        "refreshTime": 60,
+        "renderVisibleOnly": false,
+        "refreshVisibleOnly": true,
+    });
+</script>
+                <div class="card">
+                    <div class="card-block px-2 px-md-3">
+                            <div class="row">
+        <div class="col-sm-5">
+            <p class="lead text-center">Quest</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn-block" href="https://mhgu.kiranico.com/quest">Quest List</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <p class="lead text-center">Weapon</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/greatsword" class="btn-block">Great Sword</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/longsword" class="btn-block">Long Sword</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/sword" class="btn-block">Sword &amp; Shield</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/dualblades" class="btn-block">Dual Blades</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/hammer" class="btn-block">Hammer</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/huntinghorn" class="btn-block">Hunting Horn
+                            / Songs</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/lance" class="btn-block">Lance</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/gunlance" class="btn-block">Gunlance</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/switchaxe" class="btn-block">Switch Axe</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/chargeblade" class="btn-block">Charge Blade</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/insectglaive" class="btn-block">Insect Glaive
+                            / Kinsect</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/bow" class="btn-block">Bow</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/lightbowgun" class="btn-block">Light Bowgun</a>
+                    </td>
+                    <td>
+                        <a href="https://mhgu.kiranico.com/heavybowgun" class="btn-block">Heavy Bowgun</a>
+                    </td>
+                </tr>
+            </table>
+            <p class="lead text-center">Armor</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/armor">Armor List</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/decorations">Decorations</a></td>
+                </tr>
+            </table>
+            <hr>
+            <p class="lead text-center">Skill</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/skill">Skill List</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/hunterarts">Hunter Arts</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/charms">Charm Skill Tables</a></td>
+                </tr>
+            </table>
+            <hr>
+            <p class="lead text-center">Item</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn-block" href="https://mhgu.kiranico.com/item">Item List</a>
+                        </div>
+                    </td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/combine">Combo List</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/veggie">Veggie Elder</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/hunter-hire">Hunters for Hire</a></td>
+                </tr>
+            </table>
+            <p class="lead text-center">Map</p>
+            <table class="table table-sm table-bordered">
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/759e5">J. Frontier </a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/854d5">V. Hills </a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/a5375">A. Ridge </a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/75065">M. Peaks </a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/e58e5">Dunes</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/d5d85">D. Island</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/757b5">Marshlands</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/e5b45">Volcano</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/65a35">Arena</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/56485">V. Slayground</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/5edd5">A. Steppe</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/596e5">V. Hollow</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/540d5">Primal Forest</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/53675">F. Seaway</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/50b65">F. Slayground</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/58de5">Sanctuary</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/5d385">Forlorn Arena</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/57db5">S. Pinnacle</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/5b945">Ingle Isle</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/5a035">Polar Field</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/56a85">Wyvern&#039;s End</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/5ebd5">Desert</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/59ee5">Jungle</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/548d5">Ruined Pinnacle</a>
+                            </td>
+                                            </tr>
+                                    <tr>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/53375">Castle Schrade</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/50765">Fortress</a>
+                            </td>
+                                                    <td>
+                                <a href="https://mhgu.kiranico.com/map/586e5">Forlorn Citadel</a>
+                            </td>
+                                            </tr>
+                            </table>
+            <p class="lead text-center">Palico</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/prowler-weapon">Palico Weapon</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/prowler-armor">Palico Armor</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/prowler-skill">Palico Skill</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/prowler-support">Palico Support</a></td>
+                </tr>
+            </table>
+            <hr>
+            <p class="lead text-center">Canteen</p>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/food-skills">Food Skills</a></td>
+                    <td><a class="btn-block" href="https://mhgu.kiranico.com/meals">Meal List</a></td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+        <div class="col-sm-7">
+            <p class="lead text-center">Monster</p>
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60036" class="btn-block">Great Maccao</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64dd6" class="btn-block">Velocidrome</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60b36" class="btn-block">Bulldrome</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d786" class="btn-block">Seltas</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65376" class="btn-block">Seltas Queen</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65776" class="btn-block">Arzuros</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60e36" class="btn-block">Redhelm Arzuros</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64d84" class="btn-block">Giadrome</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6eab6" class="btn-block">Gendrome</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65e76" class="btn-block">Cephadrome</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/a67b6" class="btn-block">Yian Kut-Ku</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69846" class="btn-block">Iodrome</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a756" class="btn-block">Kecha Wacha</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68a46" class="btn-block">Lagombi</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6db86" class="btn-block">Snowbaron Lagombi</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/a6b96" class="btn-block">Gypceros</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63906" class="btn-block">Tetsucabra</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64ad6" class="btn-block">Drilltusk Tetsucabra</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6da86" class="btn-block">Daimyo Hermitaur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67db6" class="btn-block">Stonefist Hermitaur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/674b6" class="btn-block">Volvidon</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63d0d" class="btn-block">Congalala</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d586" class="btn-block">Royal Ludroth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69879" class="btn-block">Barroth</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6eed6" class="btn-block">Basarios</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b796" class="btn-block">Malfestio</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6dade" class="btn-block">Nightcloak Malfestio</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e7b6" class="btn-block">Zamtrios</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/d6d86" class="btn-block">Khezu</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60750" class="btn-block">Nerscylla</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/464d6" class="btn-block">Rathian</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/06eb6" class="btn-block">Gold Rathian</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/76946" class="btn-block">Dreadqueen Rathian</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/d6576" class="btn-block">Rathalos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/06036" class="btn-block">Silver Rathalos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/d6846" class="btn-block">Dreadking Rathalos</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63706" class="btn-block">Nibelsnarf</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/76a56" class="btn-block">Plesioth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a056" class="btn-block">Blangonga</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6ba96" class="btn-block">Lavasioth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6bb96" class="btn-block">Shogun Ceanataur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a044" class="btn-block">Rustrazor Ceanataur</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69a46" class="btn-block">Najarala</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a856" class="btn-block">Nargacuga</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63506" class="btn-block">Silverwind Nargacuga</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60736" class="btn-block">Yian Garuga</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68046" class="btn-block">Deadeye Yian Garuga</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65076" class="btn-block">Uragaan</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60436" class="btn-block">Crystalbeard Uragaan</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68346" class="btn-block">Lagiacrus</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/647d6" class="btn-block">Zinogre</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e0b6" class="btn-block">Thunderlord Zinogre</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6ea4d" class="btn-block">Barioth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e5b6" class="btn-block">Mizutsune</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6bbe8" class="btn-block">Soulseer Mizutsune</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/649d6" class="btn-block">Astalos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67d50" class="btn-block">Boltreaver Astalos</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69e46" class="btn-block">Gammoth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a004" class="btn-block">Elderfrost Gammoth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6aa56" class="btn-block">Glavenus</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63a06" class="btn-block">Hellblade Glavenus</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/677b6" class="btn-block">Agnaktor</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60336" class="btn-block">Gore Magala</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/680d5" class="btn-block">Chaotic Gore Magala</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67eb6" class="btn-block">Seregios</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6ab56" class="btn-block">Duramboros</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68746" class="btn-block">Tigrex</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d486" class="btn-block">Grimclaw Tigrex</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69596" class="btn-block">Gravios</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65836" class="btn-block">Diablos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60806" class="btn-block">Bloodbath Diablos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63d06" class="btn-block">Kirin</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b096" class="btn-block">Brachydios</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65ed3" class="btn-block">Raging Brachydios</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68946" class="btn-block">Shagaru Magala</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63ddd" class="btn-block">Valstrax</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63306" class="btn-block">Rajang</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/644d6" class="btn-block">Furious Rajang</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6edb6" class="btn-block">Deviljho</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69446" class="btn-block">Savage Deviljho</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6ebb6" class="btn-block">Kushala Daora</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69346" class="btn-block">Chameleos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65a76" class="btn-block">Teostra</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68e56" class="btn-block">Lao-Shan Lung</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/678b6" class="btn-block">Akantor</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/640d6" class="btn-block">Ukanlos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69946" class="btn-block">Amatsu</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65576" class="btn-block">Nakarkos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64dd4" class="btn-block">Ahtal-Neset</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6eaad" class="btn-block">Ahtal-Ka</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6bd96" class="btn-block">Alatreon</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d3e6" class="btn-block">Fatalis</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67306" class="btn-block">Crimson Fatalis</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b886" class="btn-block">Old Fatalis</a>
+                                </td>
+                                                    </tr>
+                                    </table>
+                <table class="table table-sm table-bordered">
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68446" class="btn-block">Aptonoth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d986" class="btn-block">Apceros</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67ab6" class="btn-block">Kelbi</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b496" class="btn-block">Mosswine</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a356" class="btn-block">Hornetaur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63806" class="btn-block">Vespoid</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/643d6" class="btn-block">Felyne</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e3b6" class="btn-block">Melynx</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69046" class="btn-block">Velociprey</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65476" class="btn-block">Genprey</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60936" class="btn-block">Ioprey</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68546" class="btn-block">Cephalos</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6d886" class="btn-block">Bullfango</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/679b6" class="btn-block">Popo</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b596" class="btn-block">Giaprey</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6a956" class="btn-block">Anteka</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63b06" class="btn-block">Remobra</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64bd6" class="btn-block">Hermitaur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e9b6" class="btn-block">Ceanataur</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69b46" class="btn-block">Blango</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65b76" class="btn-block">Rhenoplos</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60a36" class="btn-block">Bnahabra</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/68b46" class="btn-block">Altaroth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6de86" class="btn-block">Jaggi</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/67bb6" class="btn-block">Jaggia</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6b396" class="btn-block">Ludroth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6ad56" class="btn-block">Uroktor</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/63406" class="btn-block">Slagtoth</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/634d6" class="btn-block">Gargwa</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/64e46" class="btn-block">Zamite</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/6e8d6" class="btn-block">Konchu</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69d96" class="btn-block">Maccao</a>
+                                </td>
+                                                    </tr>
+                                            <tr>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65936" class="btn-block">Larinoth</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/60d06" class="btn-block">Moofah</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/69889" class="btn-block">Great Thunderbug</a>
+                                </td>
+                                                            <td>
+                                    <a href="https://mhgu.kiranico.com/monster/65ee3" class="btn-block">Conga</a>
+                                </td>
+                                                    </tr>
+                                    </table>
+            </div>
+        </div>
+    </div>
+                    </div>
+                </div>
+                <br>
+                                            </div>
+        </div>
+        <br>
+<hr>
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <br>
+        <div class="text-center">
+            <p>
+                <a href="https://twitter.com/kiranico_db" class="twitter-follow-button"
+                   data-show-count="false">
+                    <span class="hidden-sm-down">Follow</span>
+                    @kiranico_db
+                </a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </p>
+            <p>Kiranico &copy; 2021</p>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+<script src="/js/app.2e4d8e55b1727e91765d.js"></script>
+</body>
+</html>
